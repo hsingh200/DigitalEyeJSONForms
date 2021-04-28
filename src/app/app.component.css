@@ -1,0 +1,90 @@
+.addbtn{
+    position: absolute;
+    margin-left: 54%;
+    margin-top: -17%;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+button.btn.btn-circle{
+    width: 60px;
+    height: 60px;
+    padding: 10px 16px;
+    border-radius: 90px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.h1{
+    display: block;
+    font-size: 200% !important;
+    color: rgb(24, 22, 22);
+    text-align: center;
+    font-variant: small-caps;
+}
+
+.h5{
+    color: rgb(24, 22, 22);
+    margin-left: 5%;
+    font-size: 16px;
+}
+
+small.form-text.btn-circle{
+    font-size: 18px;
+    background:none;
+    color: rgb(24, 22, 22);
+}
+
+small.btn-circle:not(:disabled):not(.disabled):active{
+    font-size: 18px;
+    background:none;
+    color: rgb(24, 22, 22);
+}
+
+.col-xs-6{
+    width: 50% !important;
+    text-align: center;
+}
+
+small.bi::before{
+    content:'';
+}
+
+[class^="bi-"]::before, [class*=" bi-"]::before{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.my-modal {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 0;
+    }
+
+.para{
+    color: rgb(24, 22, 22);
+}
+
+.formbg{
+    border: solid 1px;
+    margin-top: 5%;
+    /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3.amazonaws.com/upload.uxpin/files/832914/826829/plumbing_texture-11cc0bf967c3ec57b091179930a18d12-86b88b.jpg);
+    background-size: cover;*/
+}
