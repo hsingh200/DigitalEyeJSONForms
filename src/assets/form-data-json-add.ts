@@ -68,7 +68,8 @@ export const SERVER_DATA_ADD = {
         },
         mandatory: true,
         tier: 2,
-        repeatable: 1,
+        repeatable: 2,
+        maxLimit: 5,
         controlName: 'Bathroom',
         parent: 'Plumbing',
         tip: '',
@@ -145,7 +146,7 @@ export const SERVER_DATA_ADD = {
         tip: '',
         metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
         ui: {
-          hide: true,
+          hide: false,
           viewMode: {
             advance: {
               div: ['col-xs-6']
@@ -428,6 +429,7 @@ export const SERVER_DATA_ADD = {
         },
         mandatory: true,
         repeatable: 1,
+        maxLimit: 5,
         tier: 2,
         controlName: 'Kitchen',
         parent: 'Plumbing',

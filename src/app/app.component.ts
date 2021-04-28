@@ -5,6 +5,7 @@ import { ReactiveFormConfig } from '@rxweb/reactive-form-validators';
 import { SERVER_DATA } from '../assets/form-data-json';
 import { SERVER_DATA_ADD } from '../assets/form-data-json-add';
 import { UserModel } from '../assets/config';
+import { exit } from 'node:process';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit{
                            ['base_propspec_btn'], 'base_roofline_add_btn',
                            ['base_dwelling_front_btn', 'base_dwelling_back_btn'],
                            ['base_dwelling_right_btn', 'base_dwelling_left_btn'],
-                           ['base_propspec_add_btn', 'base_propspec_add_details']];
+                           ['base_propspec_add_btn', 'base_propspec_add_details'], 'base_back_btn'];
 
 
   dynamicFormBuildConfig: DynamicFormBuildConfig[] = [];
@@ -77,11 +78,12 @@ export class AppComponent implements OnInit, AfterViewInit{
         if (res.name === this.commentDialogControlName){
           if (this.comments !== undefined && this.comments.trim().length > 0) {
             res.value = this.comments.trim();
+            console.log(this.serverData);
             res.ui.description = 'Edit Comments';
             try {
               this.dynamicFormBuildConfig.forEach(ele => {
                 if (ele.controlsConfig[this.commentDialogControlName] !== undefined) {
-                  console.log(ele.controlsConfig[this.commentDialogControlName]);
+                  ele.controlsConfig[this.commentDialogControlName].value = this.comments.trim();
                   ele.controlsConfig[this.commentDialogControlName].description = 'Edit Comments';
                 }
               });
@@ -130,22 +132,33 @@ export class AppComponent implements OnInit, AfterViewInit{
       element.data.forEach(res => {
         if (res.controlName === this.repeatableSource && res.type === 'button'){
           res.repeatable += 1;
-          const newControl = this.repeatableSource + res.repeatable;
+          let newControl = this.repeatableSource + res.repeatable;
+          let found = false;
           this.serverData.forEach(ele => {
             ele.data.forEach(resp => {
-              if (resp.controlName === newControl){
-                resp.ui.hide = false;
-                try {
-                  this.dynamicFormBuildConfig.forEach(elem => {
-                    if (elem.controlsConfig[resp.name] !== undefined){
-                      elem.controlsConfig[resp.name].hide = false;
-                      this.controlLabel = elem.controlsConfig[resp.name].description;
-                      this.labelDialogControlName = resp.name;
-                    }
-                  });
+              for (let i = 2; i <= res.repeatable;){
+                newControl = this.repeatableSource + i;
+                if (resp.controlName === newControl && resp.ui.hide === true ){
+                  found = true;
+                  resp.ui.hide = false;
+                  try {
+                    this.dynamicFormBuildConfig.forEach(elem => {
+                      if (elem.controlsConfig[resp.name] !== undefined){
+                        elem.controlsConfig[resp.name].hide = false;
+                        this.controlLabel = elem.controlsConfig[resp.name].description;
+                        this.labelDialogControlName = resp.name;
+                      }
+                    });
+                  }
+                  catch (e){
+                    console.log(e);
+                  }
                 }
-                catch (e){
-                  console.log(e);
+                if (found){
+                  break;
+                }
+                else{
+                  i += 1;
                 }
               }
             });

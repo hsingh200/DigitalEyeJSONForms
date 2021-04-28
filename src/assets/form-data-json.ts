@@ -2,6 +2,24 @@ export const SERVER_DATA = [
   {
     data: [
       {
+        name: 'base_back_btn',
+        type: 'button',
+        modelName: 'userModel',
+        events: {
+          click: 'base_back'
+        },
+        tier: 1,
+        ui: {
+          hide: true,
+          viewMode: {
+            advance: {
+              div: ['col-xs-6']
+            }
+          },
+          class: ['backbtn', 'btn-dark', 'text-center', 'bi', 'bi-arrow-90deg-left'],
+        }
+      },
+      {
         name: 'base_title',
         type: 'span',
         props: {

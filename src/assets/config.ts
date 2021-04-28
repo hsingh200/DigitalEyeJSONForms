@@ -15,6 +15,77 @@ export class UserModel extends FormControlConfig {
         }
     };
 
+    base_back(): void {
+        if (this.controlsConfig.base_roofline_title.hide === false) {
+            this.base_reset();
+            this.base_tier1();
+        }
+        if (this.controlsConfig.base_dwelling_title.hide === false) {
+            this.base_reset();
+            this.base_tier1();
+        }
+        if (this.controlsConfig.base_propspec_title.hide === false) {
+            this.base_reset();
+            this.base_tier1();
+        }
+    }
+
+    base_tier1(): void {
+        this.controlsConfig.base_title.hide = false;
+
+        this.controlsConfig.base_dwelling_btn.hide = false;
+        this.controlsConfig.base_propspec_btn.hide = false;
+        this.controlsConfig.base_roofline_btn.hide = false;
+    }
+
+    base_roofline_tier2(): void {
+        this.controlsConfig.base_back_btn.hide = false;
+        this.controlsConfig.base_roofline_title.hide = false;
+
+        this.controlsConfig.base_roofline_add_btn.hide = false;
+    }
+
+    base_dwelling_tier2(): void {
+        this.controlsConfig.base_back_btn.hide = false;
+        this.controlsConfig.base_dwelling_title.hide = false;
+
+        this.controlsConfig.base_dwelling_front_btn.hide = false;
+        this.controlsConfig.base_dwelling_back_btn.hide = false;
+        this.controlsConfig.base_dwelling_right_btn.hide = false;
+        this.controlsConfig.base_dwelling_left_btn.hide = false;
+    }
+
+    base_hazard_tier2(): void {
+        this.controlsConfig.base_back_btn.hide = false;
+        this.controlsConfig.base_propspec_title.hide = false;
+
+        this.controlsConfig.base_propspec_add_btn.hide = false;
+        this.controlsConfig.base_propspec_add_details.hide = false;
+    }
+
+    base_reset(): void {
+        this.controlsConfig.base_back_btn.hide = true;
+
+        this.controlsConfig.base_title.hide = true;
+        this.controlsConfig.base_roofline_title.hide = true;
+        this.controlsConfig.base_dwelling_title.hide = true;
+        this.controlsConfig.base_propspec_title.hide = true;
+
+        this.controlsConfig.base_roofline_btn.hide = true;
+        this.controlsConfig.base_dwelling_btn.hide = true;
+        this.controlsConfig.base_propspec_btn.hide = true;
+
+        this.controlsConfig.base_roofline_add_btn.hide = true;
+
+        this.controlsConfig.base_dwelling_front_btn.hide = true;
+        this.controlsConfig.base_dwelling_back_btn.hide = true;
+        this.controlsConfig.base_dwelling_right_btn.hide = true;
+        this.controlsConfig.base_dwelling_left_btn.hide = true;
+
+        this.controlsConfig.base_propspec_add_btn.hide = true;
+        this.controlsConfig.base_propspec_add_details.hide = true;
+    }
+
     base_roofline(): void {
         this.controlsConfig.base_roofline_btn.value = 'test';
         if (this.controlsConfig.base_roofline_btn.value === '' || this.controlsConfig.base_roofline_btn.value === undefined) {
@@ -25,45 +96,28 @@ export class UserModel extends FormControlConfig {
                 this.controlsConfig.base_roofline_btn.config.tip);
         }
         else {
-            // console.log(this.controlsConfig.base_roofline_btn.value);
-            this.controlsConfig.base_dwelling_btn.hide = true;
-            this.controlsConfig.base_propspec_btn.hide = true;
-            this.controlsConfig.base_roofline_btn.hide = true;
+            this.controlsConfig.base_back_btn.config.tier = 2;
 
-            this.controlsConfig.base_title.hide = true;
-            this.controlsConfig.base_roofline_title.hide = false;
-            this.controlsConfig.base_roofline_add_btn.hide = false;
+            this.base_reset();
+            this.base_roofline_tier2();
         }
     }
 
     base_dwelling(): void {
-        this.controlsConfig.base_dwelling_btn.hide = true;
-        this.controlsConfig.base_propspec_btn.hide = true;
-        this.controlsConfig.base_roofline_btn.hide = true;
-
-        this.controlsConfig.base_title.hide = true;
-        this.controlsConfig.base_dwelling_title.hide = false;
-        this.controlsConfig.base_dwelling_front_btn.hide = false;
-        this.controlsConfig.base_dwelling_back_btn.hide = false;
-        this.controlsConfig.base_dwelling_right_btn.hide = false;
-        this.controlsConfig.base_dwelling_left_btn.hide = false;
+        this.base_reset();
+        this.base_dwelling_tier2();
     }
 
     base_propspec(): void {
-        this.controlsConfig.base_dwelling_btn.hide = true;
-        this.controlsConfig.base_propspec_btn.hide = true;
-        this.controlsConfig.base_roofline_btn.hide = true;
+        this.base_reset();
+        this.base_hazard_tier2();
 
-        this.controlsConfig.base_title.hide = true;
-        this.controlsConfig.base_propspec_title.hide = false;
-        this.controlsConfig.base_propspec_add_details.hide = false;
-        this.controlsConfig.base_propspec_add_btn.hide = false;
-
+        console.log(this.controlsConfig.base_propspec_add_details.value);
         if (this.controlsConfig.base_propspec_add_details.value === '' ||
-            this.controlsConfig.base_propspec_add_details.value === undefined){
+            this.controlsConfig.base_propspec_add_details.value === undefined) {
             this.controlsConfig.base_propspec_add_details.description = 'Add Comments';
         }
-        else{
+        else {
             this.controlsConfig.base_propspec_add_details.description = 'Edit Comments';
         }
     }
@@ -76,7 +130,7 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.base_propspec_add_btn.config.tip);
     }
 
-    base_propspec_add_details(): void{
+    base_propspec_add_details(): void {
         this.component.openCommentDialog(this.controlsConfig.base_propspec_add_details.config.name);
     }
 
@@ -209,36 +263,77 @@ export class UserModel extends FormControlConfig {
     }
 
     plumbing_tier1(): void {
-        this.controlsConfig.plumbing_control_add_btn.hide = true;
-        this.controlsConfig.plumbing_kitchen_btn.hide = true;
-        this.controlsConfig.plumbing_kitchen2_btn.hide = true;
-        this.controlsConfig.plumbing_kitchen3_btn.hide = true;
-        this.controlsConfig.plumbing_kitchen4_btn.hide = true;
-        this.controlsConfig.plumbing_kitchen5_btn.hide = true;
-        this.controlsConfig.plumbing_bathroom_btn.hide = true;
-        this.controlsConfig.plumbing_bathroom2_btn.hide = true;
-        this.controlsConfig.plumbing_bathroom3_btn.hide = true;
-        this.controlsConfig.plumbing_bathroom4_btn.hide = true;
-        this.controlsConfig.plumbing_bathroom5_btn.hide = true;
-        this.controlsConfig.plumbing_wmhose_btn.hide = true;
-        this.controlsConfig.plumbing_heater_btn.hide = true;
-        this.controlsConfig.plumbing_activeleaks_btn.hide = true;
-        this.controlsConfig.plumbing_priorleaks_btn.hide = true;
-        this.controlsConfig.plumbing_dishwasher_btn.hide = true;
-        this.controlsConfig.plumbing_addComments_btn.hide = true;
-        this.controlsConfig.plumbing_title.hide = true;
-    }
+        this.controlsConfig.plumbing_title.hide = false;
+        this.controlsConfig.plumbing_control_add_btn.hide = false;
 
-    plumbing_reset(): void {
         this.controlsConfig.plumbing_kitchen_btn.hide = false;
+        this.controlsConfig.plumbing_kitchen2_btn.hide = false;
+        this.controlsConfig.plumbing_kitchen3_btn.hide = false;
+        this.controlsConfig.plumbing_kitchen4_btn.hide = false;
+        this.controlsConfig.plumbing_kitchen5_btn.hide = false;
+
         this.controlsConfig.plumbing_bathroom_btn.hide = false;
+        this.controlsConfig.plumbing_bathroom2_btn.hide = false;
+        this.controlsConfig.plumbing_bathroom3_btn.hide = false;
+        this.controlsConfig.plumbing_bathroom4_btn.hide = false;
+        this.controlsConfig.plumbing_bathroom5_btn.hide = false;
+
         this.controlsConfig.plumbing_wmhose_btn.hide = false;
         this.controlsConfig.plumbing_heater_btn.hide = false;
         this.controlsConfig.plumbing_activeleaks_btn.hide = false;
         this.controlsConfig.plumbing_priorleaks_btn.hide = false;
         this.controlsConfig.plumbing_dishwasher_btn.hide = false;
         this.controlsConfig.plumbing_addComments_btn.hide = false;
-        this.controlsConfig.plumbing_title.hide = false;
+    }
+
+    plumbing_reset(): void {
+        this.controlsConfig.plumbing_title.hide = true;
+        this.controlsConfig.plumbing_kitchen_title.hide = true;
+        this.controlsConfig.plumbing_bathroom_title.hide = true;
+
+        this.controlsConfig.plumbing_control_add_btn.hide = true;
+
+        this.controlsConfig.plumbing_kitchen_btn.hide = true;
+        this.controlsConfig.plumbing_kitchensink_btn.hide = true;
+
+        this.controlsConfig.plumbing_kitchen2_btn.hide = true;
+        this.controlsConfig.plumbing_kitchensink2_btn.hide = true;
+
+        this.controlsConfig.plumbing_kitchen3_btn.hide = true;
+        this.controlsConfig.plumbing_kitchensink3_btn.hide = true;
+
+        this.controlsConfig.plumbing_kitchen4_btn.hide = true;
+        this.controlsConfig.plumbing_kitchensink4_btn.hide = true;
+
+        this.controlsConfig.plumbing_kitchen5_btn.hide = true;
+        this.controlsConfig.plumbing_kitchensink5_btn.hide = true;
+
+        this.controlsConfig.plumbing_bathroom_btn.hide = true;
+        this.controlsConfig.plumbing_bathroomsink_btn.hide = true;
+        this.controlsConfig.plumbing_bathtub_btn.hide = true;
+
+        this.controlsConfig.plumbing_bathroom2_btn.hide = true;
+        this.controlsConfig.plumbing_bathroomsink2_btn.hide = true;
+        this.controlsConfig.plumbing_bathtub2_btn.hide = true;
+
+        this.controlsConfig.plumbing_bathroom3_btn.hide = true;
+        this.controlsConfig.plumbing_bathroomsink3_btn.hide = true;
+        this.controlsConfig.plumbing_bathtub3_btn.hide = true;
+
+        this.controlsConfig.plumbing_bathroom4_btn.hide = true;
+        this.controlsConfig.plumbing_bathroomsink4_btn.hide = true;
+        this.controlsConfig.plumbing_bathtub4_btn.hide = true;
+
+        this.controlsConfig.plumbing_bathroom5_btn.hide = true;
+        this.controlsConfig.plumbing_bathroomsink5_btn.hide = true;
+        this.controlsConfig.plumbing_bathtub5_btn.hide = true;
+
+        this.controlsConfig.plumbing_heater_btn.hide = true;
+        this.controlsConfig.plumbing_dishwasher_btn.hide = true;
+        this.controlsConfig.plumbing_activeleaks_btn.hide = true;
+        this.controlsConfig.plumbing_priorleaks_btn.hide = true;
+        this.controlsConfig.plumbing_wmhose_btn.hide = true;
+        this.controlsConfig.plumbing_addComments_btn.hide = true;
     }
 
     plumbing_kitchen(): void {
