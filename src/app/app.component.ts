@@ -138,13 +138,15 @@ export class AppComponent implements OnInit, AfterViewInit{
             ele.data.forEach(resp => {
               for (let i = 2; i <= res.repeatable;){
                 newControl = this.repeatableSource + i;
-                if (resp.controlName === newControl && resp.ui.hide === true ){
+                if (resp.controlName === newControl && resp.enabled === false){
                   found = true;
                   resp.ui.hide = false;
+                  resp.enabled = true;
                   try {
                     this.dynamicFormBuildConfig.forEach(elem => {
                       if (elem.controlsConfig[resp.name] !== undefined){
                         elem.controlsConfig[resp.name].hide = false;
+                        elem.controlsConfig[resp.name].config.enabled = true;
                         this.controlLabel = elem.controlsConfig[resp.name].description;
                         this.labelDialogControlName = resp.name;
                       }

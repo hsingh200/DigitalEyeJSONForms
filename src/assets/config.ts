@@ -87,7 +87,7 @@ export class UserModel extends FormControlConfig {
     }
 
     base_roofline(): void {
-        this.controlsConfig.base_roofline_btn.value = 'test';
+        // this.controlsConfig.base_roofline_btn.value = 'test';
         if (this.controlsConfig.base_roofline_btn.value === '' || this.controlsConfig.base_roofline_btn.value === undefined) {
             this.component.test(this.controlsConfig.base_roofline_btn.config.name,
                 this.controlsConfig.base_roofline_btn.config.controlName,
@@ -112,7 +112,6 @@ export class UserModel extends FormControlConfig {
         this.base_reset();
         this.base_hazard_tier2();
 
-        console.log(this.controlsConfig.base_propspec_add_details.value);
         if (this.controlsConfig.base_propspec_add_details.value === '' ||
             this.controlsConfig.base_propspec_add_details.value === undefined) {
             this.controlsConfig.base_propspec_add_details.description = 'Add Comments';
@@ -267,16 +266,32 @@ export class UserModel extends FormControlConfig {
         this.controlsConfig.plumbing_control_add_btn.hide = false;
 
         this.controlsConfig.plumbing_kitchen_btn.hide = false;
-        this.controlsConfig.plumbing_kitchen2_btn.hide = false;
-        this.controlsConfig.plumbing_kitchen3_btn.hide = false;
-        this.controlsConfig.plumbing_kitchen4_btn.hide = false;
-        this.controlsConfig.plumbing_kitchen5_btn.hide = false;
+        if (this.controlsConfig.plumbing_kitchen2_btn.config.enabled === true){
+            this.controlsConfig.plumbing_kitchen2_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_kitchen3_btn.config.enabled === true){
+            this.controlsConfig.plumbing_kitchen3_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_kitchen4_btn.config.enabled === true){
+            this.controlsConfig.plumbing_kitchen4_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_kitchen5_btn.config.enabled === true){
+            this.controlsConfig.plumbing_kitchen5_btn.hide = false;
+        }
 
         this.controlsConfig.plumbing_bathroom_btn.hide = false;
-        this.controlsConfig.plumbing_bathroom2_btn.hide = false;
-        this.controlsConfig.plumbing_bathroom3_btn.hide = false;
-        this.controlsConfig.plumbing_bathroom4_btn.hide = false;
-        this.controlsConfig.plumbing_bathroom5_btn.hide = false;
+        if (this.controlsConfig.plumbing_bathroom2_btn.config.enabled === true){
+            this.controlsConfig.plumbing_bathroom2_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_bathroom3_btn.config.enabled === true){
+            this.controlsConfig.plumbing_bathroom3_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_bathroom4_btn.config.enabled === true){
+            this.controlsConfig.plumbing_bathroom4_btn.hide = false;
+        }
+        if (this.controlsConfig.plumbing_bathroom5_btn.config.enabled === true){
+            this.controlsConfig.plumbing_bathroom5_btn.hide = false;
+        }
 
         this.controlsConfig.plumbing_wmhose_btn.hide = false;
         this.controlsConfig.plumbing_heater_btn.hide = false;
@@ -337,65 +352,65 @@ export class UserModel extends FormControlConfig {
     }
 
     plumbing_kitchen(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_kitchen_title.hide = false;
         this.controlsConfig.plumbing_kitchensink_btn.hide = false;
     }
 
     plumbing_kitchen2(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_kitchen_title.hide = false;
         this.controlsConfig.plumbing_kitchensink2_btn.hide = false;
     }
 
     plumbing_kitchen3(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_kitchen_title.hide = false;
         this.controlsConfig.plumbing_kitchensink3_btn.hide = false;
     }
 
     plumbing_kitchen4(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_kitchen_title.hide = false;
         this.controlsConfig.plumbing_kitchensink4_btn.hide = false;
     }
 
     plumbing_kitchen5(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_kitchen_title.hide = false;
         this.controlsConfig.plumbing_kitchensink5_btn.hide = false;
     }
 
     plumbing_bathroom(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_bathroom_title.hide = false;
         this.controlsConfig.plumbing_bathroomsink_btn.hide = false;
         this.controlsConfig.plumbing_bathtub_btn.hide = false;
     }
 
     plumbing_bathroom2(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_bathroom_title.hide = false;
         this.controlsConfig.plumbing_bathroomsink2_btn.hide = false;
         this.controlsConfig.plumbing_bathtub2_btn.hide = false;
     }
 
     plumbing_bathroom3(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_bathroom_title.hide = false;
         this.controlsConfig.plumbing_bathroomsink3_btn.hide = false;
         this.controlsConfig.plumbing_bathtub3_btn.hide = false;
     }
 
     plumbing_bathroom4(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_bathroom_title.hide = false;
         this.controlsConfig.plumbing_bathroomsink4_btn.hide = false;
         this.controlsConfig.plumbing_bathtub4_btn.hide = false;
     }
 
     plumbing_bathroom5(): void {
-        this.plumbing_tier1();
+        this.plumbing_reset();
         this.controlsConfig.plumbing_bathroom_title.hide = false;
         this.controlsConfig.plumbing_bathroomsink5_btn.hide = false;
         this.controlsConfig.plumbing_bathtub5_btn.hide = false;

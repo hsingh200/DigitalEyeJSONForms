@@ -92,6 +92,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_bathroom2'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Bathroom2',
         parent: 'Plumbing',
@@ -116,6 +117,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_bathroom3'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Bathroom3',
         parent: 'Plumbing',
@@ -140,6 +142,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_bathroom4'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Bathroom4',
         parent: 'Plumbing',
@@ -164,6 +167,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_bathroom5'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Bathroom5',
         parent: 'Plumbing',
@@ -573,6 +577,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_kitchen2'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Kitchen2',
         parent: 'Plumbing',
@@ -597,6 +602,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_kitchen3'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Kitchen3',
         parent: 'Plumbing',
@@ -621,6 +627,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_kitchen4'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Kitchen4',
         parent: 'Plumbing',
@@ -645,6 +652,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_kitchen5'
         },
         mandatory: false,
+        enabled: false,
         tier: 2,
         controlName: 'Kitchen5',
         parent: 'Plumbing',
