@@ -73,8 +73,14 @@ small.bi::before{
 }
 
 [class^="bi-"]::before, [class*=" bi-"]::before{
-    font-size: 1.5rem;
-    color: white;
+    font-size: 15px;
+    color: black;
+}
+
+.btneditable{
+    position: absolute;
+    margin-left: -14%;
+    margin-top: 10%;
 }
 
 .my-modal {

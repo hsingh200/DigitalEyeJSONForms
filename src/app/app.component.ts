@@ -6,6 +6,7 @@ import { SERVER_DATA } from '../assets/form-data-json';
 import { SERVER_DATA_ADD } from '../assets/form-data-json-add';
 import { UserModel } from '../assets/config';
 import { exit } from 'node:process';
+import { element } from 'protractor';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   serverData: any[] = SERVER_DATA;
 
-  uiBindings: string[] = ['lblDetExterior',
+  uiBindings: string[] = ['base_dwelling_frontview_test_btn', 'lblDetExterior',
                            ['btnDriveway', 'btnFoundation'],
                            ['btnSidewalks', 'btnPorches'],
                            ['btnStairs', 'btnTrees'],
@@ -43,8 +44,8 @@ export class AppComponent implements OnInit, AfterViewInit{
                            'base_title', 'base_roofline_title', 'base_dwelling_title', 'base_propspec_title',
                            ['base_roofline_btn', 'base_dwelling_btn'],
                            ['base_propspec_btn'], 'base_roofline_add_btn',
-                           ['base_dwelling_front_btn', 'base_dwelling_back_btn'],
-                           ['base_dwelling_right_btn', 'base_dwelling_left_btn'],
+                           ['base_dwelling_frontview_btn', 'base_dwelling_backview_btn'],
+                           ['base_dwelling_rightview_btn', 'base_dwelling_leftview_btn'],
                            ['base_propspec_add_btn', 'base_propspec_add_details'], 'base_back_btn'];
 
 
@@ -174,7 +175,7 @@ export class AppComponent implements OnInit, AfterViewInit{
       this.elm1.style.width = '0';
     }, 75);
 
-    this.addControlLabelopen();
+    this.addControlLabelopen(this.controlLabel, this.labelDialogControlName);
   }
 
   addControlLabelclose(): void {
@@ -184,7 +185,9 @@ export class AppComponent implements OnInit, AfterViewInit{
     }, 75);
   }
 
-  addControlLabelopen(): void {
+  addControlLabelopen(desc: string, controlName: string): void {
+    this.controlLabel = desc;
+    this.labelDialogControlName = controlName;
     this.elm2.classList.add('show');
     this.elm2.style.width = '100vw';
   }
@@ -192,6 +195,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   addControlLabelsave(): void{
     this.serverData.forEach(element => {
       element.data.forEach(res => {
+        console.log(this.labelDialogControlName);
         if (res.name === this.labelDialogControlName){
           res.ui.description = this.controlLabel;
           try {
@@ -244,14 +248,43 @@ export class AppComponent implements OnInit, AfterViewInit{
     console.log('MetaTags : ' + metatags);
     console.log('Tip : ' + tip);
     console.log('Tier : ' + tier);
+    this.uploadFile(tier, parent, child);
   }
 
-  uploadFile(eve: any): void{
-    console.log(eve);
+  uploadFile(tier, parent, child, control): void{
+    let arr = [];
+    this.serverData.forEach(elem => {
+      const idMapping = elem.data.reduce((acc, el, i) => {
+        acc[el.controlName] = i;
+        return acc;
+      }, {});
+      console.log(idMapping);
+
+      let root;
+      elem.data.forEach(el => {
+        // Handle the root element
+        if (el.parent === '') {
+          root = el;
+          return;
+        }
+        // Use our mapping to locate the parent element in our data array
+        const parentEl = elem.data[idMapping[el.parent]];
+        // Add our current el to its parent's `children` array
+        parentEl.children = [...(parentEl.children || []), el];
+      });
+      arr.push(root);
+      console.log(arr);
+      // let unique = [...new Set(elem.data.map(item => item.controlName))];
+      // let unique1 = [...new Set(elem.data.map(item => item.tier))];
+      // for(let i=0; i<unique.length; i++){
+      //  console.log(unique[i])
+      // }
+
+    });
   }
 
   selectImageSource(): void{
-    console.log('button clicked');
+
   }
 
   addzone(): void{
@@ -262,7 +295,9 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.uiBindings.push('plumbing_title', 'plumbing_kitchen_title', 'plumbing_bathroom_title',
         'plumbing_control_add_btn',
        ['plumbing_kitchen_btn', 'plumbing_kitchen2_btn', 'plumbing_kitchen3_btn', 'plumbing_kitchen4_btn', 'plumbing_kitchen5_btn',
-        'plumbing_bathroom_btn', 'plumbing_bathroom2_btn', 'plumbing_bathroom3_btn', 'plumbing_bathroom4_btn', 'plumbing_bathroom5_btn'],
+        'plumbing_bathroom_btn', 'plumbing_bathroom2_btn', 'plumbing_bathroom3_btn',
+        'plumbing_bathroom4_btn', 'plumbing_bathroom4_edit_btn',
+        'plumbing_bathroom5_btn'],
        ['plumbing_heater_btn', 'plumbing_dishwasher_btn'],
        ['plumbing_activeleaks_btn', 'plumbing_priorleaks_btn', 'plumbing_wmhose_btn', 'plumbing_addComments_btn'],
        ['plumbing_bathroomsink_btn', 'plumbing_bathtub_btn'],

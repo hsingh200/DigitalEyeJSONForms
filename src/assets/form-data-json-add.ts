@@ -142,7 +142,7 @@ export const SERVER_DATA_ADD = {
           click: 'plumbing_bathroom4'
         },
         mandatory: false,
-        enabled: false,
+        enabled: true,
         tier: 2,
         controlName: 'Bathroom4',
         parent: 'Plumbing',
@@ -157,6 +157,17 @@ export const SERVER_DATA_ADD = {
           },
           description: 'Bathroom 4',
           class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
+        }
+      },
+      {
+        name: 'plumbing_bathroom4_edit_btn',
+        type: 'button',
+        modelName: 'userModel',
+        events: {
+          click: 'plumbing_bathroom4_edit'
+        },
+        ui: {
+          class: ['btneditable', 'text-center', 'bi', 'bi-pencil'],
         }
       },
       {

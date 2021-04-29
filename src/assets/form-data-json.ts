@@ -9,6 +9,8 @@ export const SERVER_DATA = [
           click: 'base_back'
         },
         tier: 1,
+        controlName: 'BaseInspection',
+        parent: '',
         ui: {
           hide: true,
           viewMode: {
@@ -171,17 +173,17 @@ export const SERVER_DATA = [
         }
       },
       {
-        name: 'base_dwelling_front_btn',
+        name: 'base_dwelling_frontview_btn',
         type: 'button',
         modelName: 'userModel',
         mandatory: true,
         tier: 3,
-        controlName: 'Front',
+        controlName: 'FrontView',
         parent: 'Dwelling',
         tip: '',
         metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
         events: {
-          click: 'base_dwelling_front'
+          click: 'base_dwelling_frontview'
         },
         ui: {
           hide: true,
@@ -190,46 +192,45 @@ export const SERVER_DATA = [
               div: ['col-xs-6']
             }
           },
-          description: 'Front',
+          description: 'Front View',
           class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
         }
       },
       {
-        name: 'base_dwelling_back_btn',
+        name: 'base_dwelling_frontview_test_btn',
         type: 'button',
         modelName: 'userModel',
         mandatory: true,
-        tier: 3,
-        controlName: 'Back',
-        parent: 'Dwelling',
+        tier: 4,
+        controlName: 'Test',
+        parent: 'FrontView',
         tip: '',
         metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
         events: {
-          click: 'base_dwelling_back'
+          click: 'base_dwelling_frontview_test'
         },
         ui: {
-          hide: true,
           viewMode: {
             advance: {
               div: ['col-xs-6']
             }
           },
-          description: 'Back',
+          description: 'Front View Test',
           class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
         }
       },
       {
-        name: 'base_dwelling_right_btn',
+        name: 'base_dwelling_backview_btn',
         type: 'button',
         modelName: 'userModel',
         mandatory: true,
         tier: 3,
-        controlName: 'Right',
+        controlName: 'BackView',
         parent: 'Dwelling',
         tip: '',
         metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
         events: {
-          click: 'base_dwelling_right'
+          click: 'base_dwelling_backview'
         },
         ui: {
           hide: true,
@@ -238,22 +239,22 @@ export const SERVER_DATA = [
               div: ['col-xs-6']
             }
           },
-          description: 'Right',
+          description: 'Back View',
           class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
         }
       },
       {
-        name: 'base_dwelling_left_btn',
+        name: 'base_dwelling_rightview_btn',
         type: 'button',
         modelName: 'userModel',
         mandatory: true,
         tier: 3,
-        controlName: 'Left',
+        controlName: 'RightView',
         parent: 'Dwelling',
         tip: '',
         metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
         events: {
-          click: 'base_dwelling_left'
+          click: 'base_dwelling_rightview'
         },
         ui: {
           hide: true,
@@ -262,7 +263,31 @@ export const SERVER_DATA = [
               div: ['col-xs-6']
             }
           },
-          description: 'Left',
+          description: 'Right View',
+          class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
+        }
+      },
+      {
+        name: 'base_dwelling_leftview_btn',
+        type: 'button',
+        modelName: 'userModel',
+        mandatory: true,
+        tier: 3,
+        controlName: 'LeftView',
+        parent: 'Dwelling',
+        tip: '',
+        metatags: '["Wood Siding", "Trees Adjacent Roof", "Concrete Foundation", "Sidewalk", "Composite Roof"]',
+        events: {
+          click: 'base_dwelling_leftview'
+        },
+        ui: {
+          hide: true,
+          viewMode: {
+            advance: {
+              div: ['col-xs-6']
+            }
+          },
+          description: 'Left View',
           class: ['btn-circle', 'btn-secondary', 'text-center', 'bi', 'bi-camera'],
         }
       },
