@@ -239,8 +239,7 @@ export class AppComponent implements OnInit, AfterViewInit{
     }
   }
 
-  test(control: string, child: string, parent: string, metatags: string, tip: string, tier: string): void{
-
+  test(control: string, child: string, parent: string, metatags: string, tip: string, tier: string): void{ 
     console.log('Test Method clicked');
     console.log('Control : ' + control);
     console.log('Child : ' + child);
@@ -272,8 +271,7 @@ export class AppComponent implements OnInit, AfterViewInit{
         // Add our current el to its parent's `children` array
         parentEl.children = [...(parentEl.children || []), el];
       });
-      arr.push(root);
-      console.log(arr);
+      arr.push(root); 
       // let unique = [...new Set(elem.data.map(item => item.controlName))];
       // let unique1 = [...new Set(elem.data.map(item => item.tier))];
       // for(let i=0; i<unique.length; i++){
@@ -281,6 +279,7 @@ export class AppComponent implements OnInit, AfterViewInit{
       // }
 
     });
+    console.log(arr);
   }
 
   selectImageSource(): void{
