@@ -276,8 +276,7 @@ export class AppComponent implements OnInit, AfterViewInit{
       // let unique1 = [...new Set(elem.data.map(item => item.tier))];
       // for(let i=0; i<unique.length; i++){
       //  console.log(unique[i])
-      // }
-
+      // } 
     });
     console.log(arr);
   }
