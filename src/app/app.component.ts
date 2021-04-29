@@ -235,7 +235,7 @@ export class AppComponent implements OnInit, AfterViewInit{
     }
   }
 
-  test(control: string, child: string, parent: string, metatags: string, tip: string): void{
+  test(control: string, child: string, parent: string, metatags: string, tip: string, tier: string): void{
 
     console.log('Test Method clicked');
     console.log('Control : ' + control);
@@ -243,6 +243,7 @@ export class AppComponent implements OnInit, AfterViewInit{
     console.log('Parent : ' + parent);
     console.log('MetaTags : ' + metatags);
     console.log('Tip : ' + tip);
+    console.log('Tier : ' + tier);
   }
 
   uploadFile(eve: any): void{

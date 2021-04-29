@@ -93,7 +93,8 @@ export class UserModel extends FormControlConfig {
                 this.controlsConfig.base_roofline_btn.config.controlName,
                 this.controlsConfig.base_roofline_btn.config.parent,
                 this.controlsConfig.base_roofline_btn.config.metatags,
-                this.controlsConfig.base_roofline_btn.config.tip);
+                this.controlsConfig.base_roofline_btn.config.tip,
+                this.controlsConfig.base_roofline_btn.config.tier);
         }
         else {
             this.controlsConfig.base_back_btn.config.tier = 2;
@@ -126,7 +127,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.base_propspec_add_btn.config.controlName,
             this.controlsConfig.base_propspec_add_btn.config.parent,
             this.controlsConfig.base_propspec_add_btn.config.metatags,
-            this.controlsConfig.base_propspec_add_btn.config.tip);
+            this.controlsConfig.base_propspec_add_btn.config.tip,
+            this.controlsConfig.base_propspec_add_btn.config.tier);
     }
 
     base_propspec_add_details(): void {
@@ -146,7 +148,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.base_dwelling_front_btn.config.controlName,
             this.controlsConfig.base_dwelling_front_btn.config.parent,
             this.controlsConfig.base_dwelling_front_btn.config.metatags,
-            this.controlsConfig.base_dwelling_front_btn.config.tip);
+            this.controlsConfig.base_dwelling_front_btn.config.tip,
+            this.controlsConfig.base_dwelling_front_btn.config.tier);
     }
 
     base_dwelling_back(): void {
@@ -517,7 +520,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_bathtub3_btn.config.controlName,
             this.controlsConfig.plumbing_bathtub3_btn.config.parent,
             this.controlsConfig.plumbing_bathtub3_btn.config.metatags,
-            this.controlsConfig.plumbing_bathtub3_btn.config.tip);
+            this.controlsConfig.plumbing_bathtub3_btn.config.tip,
+            this.controlsConfig.plumbing_bathtub3_btn.config.tier);
     }
 
     plumbing_bathtub4(): void {
@@ -525,7 +529,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_bathtub4_btn.config.controlName,
             this.controlsConfig.plumbing_bathtub4_btn.config.parent,
             this.controlsConfig.plumbing_bathtub4_btn.config.metatags,
-            this.controlsConfig.plumbing_bathtub4_btn.config.tip);
+            this.controlsConfig.plumbing_bathtub4_btn.config.tip,
+            this.controlsConfig.plumbing_bathtub4_btn.config.tier);
     }
 
     plumbing_bathtub5(): void {
@@ -533,7 +538,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_bathtub5_btn.config.controlName,
             this.controlsConfig.plumbing_bathtub5_btn.config.parent,
             this.controlsConfig.plumbing_bathtub5_btn.config.metatags,
-            this.controlsConfig.plumbing_bathtub5_btn.config.tip);
+            this.controlsConfig.plumbing_bathtub5_btn.config.tip,
+            this.controlsConfig.plumbing_bathtub5_btn.config.tier);
     }
 
     plumbing_kitchensink(): void {
@@ -541,7 +547,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_kitchensink_btn.config.controlName,
             this.controlsConfig.plumbing_kitchensink_btn.config.parent,
             this.controlsConfig.plumbing_kitchensink_btn.config.metatags,
-            this.controlsConfig.plumbing_kitchensink_btn.config.tip);
+            this.controlsConfig.plumbing_kitchensink_btn.config.tip,
+            this.controlsConfig.plumbing_kitchensink_btn.config.tier);
     }
 
     plumbing_kitchensink2(): void {
@@ -549,7 +556,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_kitchensink2_btn.config.controlName,
             this.controlsConfig.plumbing_kitchensink2_btn.config.parent,
             this.controlsConfig.plumbing_kitchensink2_btn.config.metatags,
-            this.controlsConfig.plumbing_kitchensink2_btn.config.tip);
+            this.controlsConfig.plumbing_kitchensink2_btn.config.tip,
+            this.controlsConfig.plumbing_kitchensink2_btn.config.tier);
     }
 
     plumbing_kitchensink3(): void {
@@ -557,7 +565,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_kitchensink3_btn.config.controlName,
             this.controlsConfig.plumbing_kitchensink3_btn.config.parent,
             this.controlsConfig.plumbing_kitchensink3_btn.config.metatags,
-            this.controlsConfig.plumbing_kitchensink3_btn.config.tip);
+            this.controlsConfig.plumbing_kitchensink3_btn.config.tip,
+            this.controlsConfig.plumbing_kitchensink3_btn.config.tier);
     }
 
     plumbing_kitchensink4(): void {
@@ -565,7 +574,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_kitchensink4_btn.config.controlName,
             this.controlsConfig.plumbing_kitchensink4_btn.config.parent,
             this.controlsConfig.plumbing_kitchensink4_btn.config.metatags,
-            this.controlsConfig.plumbing_kitchensink4_btn.config.tip);
+            this.controlsConfig.plumbing_kitchensink4_btn.config.tip,
+            this.controlsConfig.plumbing_kitchensink4_btn.config.tier);
     }
 
     plumbing_kitchensink5(): void {
@@ -573,7 +583,8 @@ export class UserModel extends FormControlConfig {
             this.controlsConfig.plumbing_kitchensink5_btn.config.controlName,
             this.controlsConfig.plumbing_kitchensink5_btn.config.parent,
             this.controlsConfig.plumbing_kitchensink5_btn.config.metatags,
-            this.controlsConfig.plumbing_kitchensink5_btn.config.tip);
+            this.controlsConfig.plumbing_kitchensink5_btn.config.tip,
+            this.controlsConfig.plumbing_kitchensink5_btn.config.tier);
     }
 
     plumbing_contol_add(): void {
@@ -583,7 +594,7 @@ export class UserModel extends FormControlConfig {
 }
 
 export interface ComponentClickEvent {
-    test(control: string, child: string, parent: string, metatags: string): void;
+    test(control: string, child: string, parent: string, metatags: string, tip: string, tier: string): void;
     openCommentDialog(control: string): void;
     addControlopen(control: string): void;
 }
